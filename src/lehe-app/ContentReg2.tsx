@@ -2,16 +2,16 @@ import React from 'react';
 import { CDN } from './App';
 
 interface Props {
-  buttonOnClikc: Function
+  buttonOnClick: Function
 }
 
-const REG2: React.FC<Props> = ({ buttonOnClikc }) => {
+const REG2: React.FC<Props> = ({ buttonOnClick }) => {
   return (
     <div className='prize fade-stack'>
       <h1>AUHIND</h1>
       <p>Riidest poekott,<br/>millega saab mugavalt poes käia.</p>
       <p><img src={`${CDN}bag.png`} alt='Riidest poekott'/></p>
-      <button onClick={ () => buttonOnClikc(true) }>Tagasi</button>
+      <button onClick={ () => buttonOnClick(true) }>Tagasi</button>
     </div>
   );
 }

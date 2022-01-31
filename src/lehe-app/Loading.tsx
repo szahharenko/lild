@@ -33,9 +33,7 @@ const Loading: React.FC<Props> = ({onLoadComplete}) => {
   })
   const startApp = () => {
     loaderRef.current?.classList.add('bounce-out');
-    setTimeout( () => {
-      onLoadComplete()      
-    })
+    onLoadComplete()      
   }
 
   return (

@@ -25,7 +25,12 @@ html {
   --green: #50BC00;
   --error: #E60A14;
   --base-bg: #fff;
-  --view-animation-time: 2s;  
+  --view-animation-time: 2s;
+}
+@media only screen and (max-width: 600px) {
+  html {
+    --font-size: 24px;
+  }
 }
 
 html, body, input, textarea, select, button {
@@ -40,16 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@media only screen and (min-width: 1000px) {
-  body, input, button, textarea {
-    /* font-size: var(--font-size); */ 
-  }
-}
-@media only screen and (max-width: 600px) {
-  body, input, button, textarea {
-    /* font-size: var(--font-size); */
-  }
-}
 select,
 textarea,
 input[type=tel],
@@ -59,10 +54,10 @@ input[type=text] {
   border: solid 2px var(--blue);
   padding: 0 calc(var(--base-space) / 2);
   background: var(--base-bg);
-  outline: none;  
+  outline: none;
   height: var(--input-height);
   line-height: var(--input-height);
-  box-sizing: border-box;  
+  box-sizing: border-box;
   margin: 0 0 calc(var(--base-space)/2);
   color: var(--blue);
   display: block;
@@ -81,8 +76,8 @@ button {
   box-sizing: border-box;
   padding: 0 var(--base-space);
   border: none;
-  cursor: pointer;  
-  transition: all .3s;  
+  cursor: pointer;
+  transition: all .3s;
   outline: none;
   background-color: var(--blue);
   color: var(--base-bg);
@@ -105,7 +100,7 @@ button[type=submit] {
 }
 button:hover,
 button:focus {
-  filter: brightness(var(--hover-brightness)); 
+  filter: brightness(var(--hover-brightness));
 }
 
 code {
