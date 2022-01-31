@@ -1,0 +1,118 @@
+@font-face {
+  font-family: Lidl Font Pro;
+  src: url('lehe-app/assets/font/LidlFontPro-SemiBold.eot');
+  src: url('lehe-app/assets/font/LidlFontPro-SemiBold.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontPro-SemiBold.woff') format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Lidl Font Pro;
+  src: url('lehe-app/assets/font/LidlFontPro-Regular.eot');
+  src: url('lehe-app/assets/font/LidlFontPro-Regular.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontPro-Regular.woff') format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+
+html {
+  --font-size: 20px;
+  --input-height: 40px;
+  --base-space: 1em;
+  --light-green: #e0f8e6;
+  --blue: #0050aa;
+  --green: #50BC00;
+  --error: #E60A14;
+  --base-bg: #fff;
+  --view-animation-time: 2s;  
+}
+
+html, body, input, textarea, select, button {
+  font-family: Lidl Font Pro, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: normal
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media only screen and (min-width: 1000px) {
+  body, input, button, textarea {
+    /* font-size: var(--font-size); */ 
+  }
+}
+@media only screen and (max-width: 600px) {
+  body, input, button, textarea {
+    /* font-size: var(--font-size); */
+  }
+}
+select,
+textarea,
+input[type=tel],
+input[type=email],
+input[type=password],
+input[type=text] {
+  border: solid 2px var(--blue);
+  padding: 0 calc(var(--base-space) / 2);
+  background: var(--base-bg);
+  outline: none;  
+  height: var(--input-height);
+  line-height: var(--input-height);
+  box-sizing: border-box;  
+  margin: 0 0 calc(var(--base-space)/2);
+  color: var(--blue);
+  display: block;
+  width: 100%;
+}
+textarea:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus {
+  background: var(--base-bg);
+  border-color: var(--blue);
+}
+button {
+  height: var(--input-height);
+  line-height: var(--input-height);
+  box-sizing: border-box;
+  padding: 0 var(--base-space);
+  border: none;
+  cursor: pointer;  
+  transition: all .3s;  
+  outline: none;
+  background-color: var(--blue);
+  color: var(--base-bg);
+  box-sizing: content-box;
+}
+button.button-secondary {
+  background-color: var(--base-bg);
+  color: var(--blue);
+  border: solid 2px var(--blue);
+}
+button.button-small {
+  height: calc( var(--input-height) / 1.2);
+  line-height: calc( var(--input-height) / 1.2);
+  padding: 0 calc(var(--base-space) / 2);
+}
+
+button[type=submit] {
+  background: var(--base-blue);
+  color: var(--base-background);
+}
+button:hover,
+button:focus {
+  filter: brightness(var(--hover-brightness)); 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.caps {
+  text-transform: uppercase;
+}
