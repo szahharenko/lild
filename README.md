@@ -1,10 +1,7 @@
-# TodoApp
+# Lidl App
 
 ## Continuous deployment build
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bf131cd0-ccdc-40bc-9e57-d045a33c254b/deploy-status)](https://keen-johnson-faf51e.netlify.app/) https://keen-johnson-faf51e.netlify.app/
-
-## Notes
-Thanks for checking :)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2006f7dc-124a-4e91-ac57-71cb11ec4b6e/deploy-status)](https://zealous-poincare-b2e6ee.netlify.app/) https://zealous-poincare-b2e6ee.netlify.app/ 
 
 ## Scripts
 

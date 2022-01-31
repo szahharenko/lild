@@ -233,8 +233,8 @@ html, body {
     border-radius: 100%;    
     padding: calc(var(--base-space)*4);
     text-align: center;
-    min-width: var(--buble-size);
-    min-height: var(--buble-size);
+    width: var(--buble-size);
+    height: var(--buble-size);
     display: flex;
     justify-content: center;
     align-items: center;
