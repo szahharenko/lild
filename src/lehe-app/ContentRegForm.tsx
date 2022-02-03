@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { postData } from '../tools/tools'
+import { postData, getOmnivaList } from '../tools/tools'
 
 interface Props {
   onSuccess: Function
@@ -48,8 +48,7 @@ const RegForm: React.FC<Props> = ({ onSuccess }) => {
         <div>
           <select {...register('delivery')} className={`form-control ${errors.delivery ? 'is-invalid' : ''}`}>
             <option value=''>Pakiautomaat</option>
-            <option value='A'>Koht A</option>
-            <option value='B'>Koht B</option>
+            { getOmnivaList().map( ([title, region, city]) =>  <option value={title}>{`${city} - ${title}`}</option>) }
           </select>
         </div>
         <div>

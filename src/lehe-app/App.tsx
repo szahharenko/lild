@@ -10,7 +10,6 @@ import Welcome from './ContentWelcome';
 import Backstage from './Backstage';
 import { VIEWS, CONTENT, animationTime, LeafElement } from '../tools/types';
 import RegForm from './ContentRegForm';
-import { UserSubmitForm } from './ContentRegForm';
 import Rules from './Rules';
 
 export const API = 'https://dev.code-essence.eu/lidl/';
@@ -36,8 +35,7 @@ const App: React.FC = () => {
     setPlayingGame(true);
   }
 
-  const registerGame = ( userData: UserSubmitForm) : void => {
-    console.log(userData);
+  const registerGame = () : void => {
     setContent(CONTENT.REGISTER_SUCCESS);
   }
 
