@@ -102,7 +102,6 @@ html, body {
       background-color: rgba($color: #000000, $alpha: .4);
     }
   }
-
   .tree-top {
     position: absolute;
     top:0;
@@ -130,13 +129,28 @@ html, body {
         min-width: 600px;
         background: url(#{$assetPath}steak-1.png) top right no-repeat;
         background-size: contain;
+        transform-origin: top right;
+        animation: tree-wind 28s ease-in-out infinite;
       }
     }
 
     &__left {
-      background-image: url(#{$assetPath}top-left.png);
-      background-position: top left;
       left: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top:-10%;
+        left: -10%;
+        width: 100%;
+        height: 100%;
+        min-width: 600px;
+        background: url(#{$assetPath}top-left.png) top left no-repeat;
+        background-size: contain;
+        transform-origin: top left;
+        animation: tree-wind-2 18s ease-out infinite;
+        animation-delay: 1s;
+      }
     }
 
     &__bottom-left {
@@ -155,6 +169,7 @@ html, body {
         background: url(#{$assetPath}steak-1.png) top right no-repeat;
         background-size: contain;
         transform: rotateX(180deg) rotateY(180deg);
+        animation-delay: .5s;
       }
     }
   }
@@ -188,8 +203,8 @@ html, body {
     }
   }
   .leaf1 {
-    top: 10%;
-    left: 10%;
+    top: 20%;
+    left: 20%;
     transform-origin: top left;
     transform: rotate(0deg);
     animation: leaf1 35s ease-in-out infinite;
@@ -203,8 +218,8 @@ html, body {
       background-size: contain;
     }
     &__active {
-      top: 15%;
-      left: 18%;
+      top: 35%;
+      left: 25%;
       transform: rotate(-20deg) scale(1.5);
       &::before {
         opacity: .9;
@@ -213,7 +228,7 @@ html, body {
     }
   }
   .leaf2 {
-    bottom: 10%;
+    bottom: 20%;
     left: 12%;
     transform-origin: bottom left;
     transform: rotate(0deg);
@@ -229,8 +244,8 @@ html, body {
       background-size: contain;
     }
     &__active {
-      bottom: 15%;
-      left: 23%;
+      bottom: 35%;
+      left: 25%;
       transform: rotate(-10deg) scale(1.5);
       &::before {
         opacity: .7;
@@ -239,8 +254,8 @@ html, body {
     }
   }
   .leaf3 {
-    top: 15%;
-    right: 15%;
+    top: 45%;
+    right: 25%;
     background-size: contain;
     transform-origin: top right;
     transform: rotate(0deg);
@@ -257,8 +272,8 @@ html, body {
     }
 
     &__active {
-      top: 22%;
-      right: 21%;
+      top: 30%;
+      right: 25%;
       transform: rotate(5deg) scale(1.5);
       &::before {
         opacity: .9;
@@ -286,8 +301,8 @@ html, body {
       }
     }
     .leaf1 {
-      top: 20%;
-      left: 26%;
+      top: 30%;
+      left: 30%;
       transform: rotate(-15deg);
 
     }
@@ -297,8 +312,8 @@ html, body {
       transform: rotate(-15deg);
     }
     .leaf3 {
-      top: 25%;
-      right: 22%;
+      top: 35%;
+      right: 30%;
     }
   }
 }
@@ -620,13 +635,13 @@ html, body {
   }
 }
 @keyframes leaf1 {
-  50% {transform: rotate(17deg);}
+  50% {transform: rotate(27deg);}
 }
 @keyframes leaf2 {
   50% {transform: rotate(-12deg);}
 }
 @keyframes leaf3 {
-  50% {transform: rotate(12deg);}
+  50% {transform: rotate(-25deg);}
 }
 @keyframes fadeIn {
   from {opacity: 0;}
@@ -651,4 +666,65 @@ html, body {
 @keyframes scaleOrbit {
   from { opacity: 0; transform: scale(0); }
   to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes tree-wind {
+  from { transform: rotate(0); }
+  50%   { transform: rotate(-10deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes tree-wind-2 {
+  from { transform: rotate(0); }
+  50%   { transform: rotate(5deg); }
+  to   { transform: rotate(0deg); }
+}
+@keyframes tree-wind-3 {
+  50%   { transform: rotate(5deg) ; }
+}
+
+.leafs {
+
+  .leaf1-wrapper {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 50%;
+    height: 50%;
+    min-width: 600px;
+    transform-origin: top left;
+    animation: tree-wind-2 18s ease-in-out infinite;
+    animation-delay: .5s;
+  }
+  .leaf2-wrapper {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 50%;
+    height: 50%;
+    min-width: 600px;
+    transform-origin: top left;
+    animation: tree-wind-3 40s ease-in-out infinite;
+  }
+  .leaf3-wrapper {
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 50%;
+    height: 50%;
+    min-width: 600px;
+    transform-origin: top right;
+    animation: tree-wind 28s ease-in-out infinite;
+    animation-delay: .5s;
+  }
+  &__active {
+    .leaf3-wrapper,
+    .leaf2-wrapper,
+    .leaf1-wrapper {
+      width: 50%;
+      height: 50%;
+      min-width: 50%;
+    }
+  }
+
 }

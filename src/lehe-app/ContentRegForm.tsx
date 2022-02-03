@@ -5,7 +5,8 @@ import * as Yup from 'yup';
 import { postData, getOmnivaList } from '../tools/tools'
 
 interface Props {
-  onSuccess: Function
+  onSuccess: Function,
+  toggleRules: Function
 }
 
 export type UserSubmitForm = {
@@ -17,7 +18,7 @@ export type UserSubmitForm = {
 
 const API_URL = 'https://httpbin.org/post';
 
-const RegForm: React.FC<Props> = ({ onSuccess }) => {
+const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().required('Email is required').email('Email is invalid'),
@@ -25,7 +26,10 @@ const RegForm: React.FC<Props> = ({ onSuccess }) => {
     delivery: Yup.string().required('Delivery is required'),
     acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required')
   });
-
+  const rules = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toggleRules();
+  }
   const { register, handleSubmit, formState: { errors } } = useForm<UserSubmitForm>({
     resolver: yupResolver(validationSchema)
   });
@@ -48,14 +52,16 @@ const RegForm: React.FC<Props> = ({ onSuccess }) => {
         <div>
           <select {...register('delivery')} className={`form-control ${errors.delivery ? 'is-invalid' : ''}`}>
             <option value=''>Pakiautomaat</option>
-            { getOmnivaList().map( ([title, region, city]) =>  <option value={title}>{`${city} - ${title}`}</option>) }
+            { getOmnivaList().map( ([title, region, city], i) =>  <option key={i} value={title}>{`${city} - ${title}`}</option>) }
           </select>
         </div>
         <div>
           <input type="tel" {...register('phoneNumber')} className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`} placeholder='Telefoni number' />
         </div>
         <label className='checkbox'>
-          Nõustun kampaania tingimustega:
+          <span>
+            Nõustun kampaania <a href="#n" onClick={rules} >tingimustega</a>
+          </span>
           <input type={'checkbox'} {...register('acceptTerms')} className={`form-control ${errors.acceptTerms ? 'is-invalid' : ''}`} />
           <span></span>
         </label>

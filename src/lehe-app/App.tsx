@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const [currentContent, setContent] = useState<CONTENT>(CONTENT.WELCOME_ANIMATION);
   const [currentLeaf, setLeaf] = useState<LeafElement>(0);
   const [isPlayingGame, setPlayingGame] = useState<boolean>(false);
-  const [rulesOpen, toggleRules] = useState<boolean>(false);
+  const [rulesOpen, setRules] = useState<boolean>(false);
   const viewRef = useRef<HTMLDivElement>(null);
 
   const gamePlay = (leafNumber: LeafElement) : void => {
@@ -50,6 +50,10 @@ const App: React.FC = () => {
     setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime * 3 );
   }
 
+  const toggleRules = () => {
+    setRules(!rulesOpen);
+  }
+
   const returnToGame = () : void => {
     setContent(CONTENT.ABOUT)
   }
@@ -73,7 +77,7 @@ const App: React.FC = () => {
                   { currentContent === CONTENT.WELCOME_ANIMATION && <Welcome></Welcome> }
                   { currentContent === CONTENT.ABOUT && <REG1 buttonOnClick={ () => setPlayingGame(true) } bubbleOnClick={ () => { setContent(CONTENT.BAG) }}></REG1> }
                   { currentContent === CONTENT.BAG && <REG2 buttonOnClick={returnToGame}></REG2> }
-                  { currentContent === CONTENT.REGISTER && <RegForm onSuccess={registerGame}></RegForm> }
+                  { currentContent === CONTENT.REGISTER && <RegForm toggleRules={toggleRules} onSuccess={registerGame}></RegForm> }
                   { currentContent === CONTENT.REGISTER_SUCCESS && <RegSuccess></RegSuccess> }
                   { currentContent === CONTENT.FAIL_RESULT && <GameFail buttonOnClick={tryAgain}></GameFail> }
                 </>

@@ -1,23 +1,11 @@
 import React from 'react';
+import { getRandomFact } from '../tools/tools';
 
 interface Props {
   buttonOnClick: Function
 }
 
-const getRandomFact = () : string => {
-  const facts = [
-    'Chuck Norris threw a grenade and killed 50 people, then it exploded.',
-    'Chuck Norris knows Victoria\'s secret.',
-    'Chuck Norris counted to infinity. Twice.',
-    'When Chuck Norris enters a room, he doesn\'t turn the lights on, he turns the dark off.',
-    'Chuck Norris can strangle you with a cordless phone.',
-    'Death once had a near-Chuck-Norris experience.',
-    'Once a cobra bit Chuck Norris\' leg. After five days of excruciating pain, the cobra died.',
-    'Leading hand sanitizers claim they can kill 99.9 percent of germs. Chuck Norris can kill 100 percent of whatever the hell he wants.',
-    'Chuck Norris can do a wheelie on a unicycle.'
-  ]
-  return facts[Math.floor(Math.random()*facts.length)];
-}
+
 
 const GameFail: React.FC<Props> = ({ buttonOnClick }) => {
   return (

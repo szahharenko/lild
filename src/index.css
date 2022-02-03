@@ -45,6 +45,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a {
+  color: var(--blue);
+}
 select,
 textarea,
 input[type=tel],
