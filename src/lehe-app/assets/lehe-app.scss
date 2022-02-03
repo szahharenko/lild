@@ -417,7 +417,7 @@ html, body {
     }
 
     &.bounce-in {
-      animation: popIn var(--view-animation-time) cubic-bezier(.31,2,.84,.6) forwards;
+      animation: popIn var(--view-animation-time) ease-in-out forwards;
 
       .letter-in {
         > span {

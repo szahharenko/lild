@@ -18,6 +18,7 @@ export const CDN = API + 'media/';
 const App: React.FC = () => {
 
   const [currentView, setView] = useState<VIEWS>(VIEWS.LOADING);
+  const [tryCount, setTryCount] = useState<VIEWS>(0);
   const [currentContent, setContent] = useState<CONTENT>(CONTENT.WELCOME_ANIMATION);
   const [currentLeaf, setLeaf] = useState<LeafElement>(0);
   const [isPlayingGame, setPlayingGame] = useState<boolean>(false);
@@ -25,8 +26,13 @@ const App: React.FC = () => {
   const viewRef = useRef<HTMLDivElement>(null);
 
   const gamePlay = (leafNumber: LeafElement) : void => {
-    setLeaf(leafNumber)
-    setContent(Math.random() < 0.8 ? CONTENT.FAIL_RESULT : CONTENT.REGISTER);
+    setLeaf(leafNumber);
+    switch(tryCount) {
+      case 0: setContent(CONTENT.FAIL_RESULT); break;
+      case 1: setContent(Math.random() < 0.5 ? CONTENT.FAIL_RESULT : CONTENT.REGISTER); break;
+      case 2: setContent(CONTENT.REGISTER); break;
+    }
+    setTryCount(tryCount+1);
     setPlayingGame(false);
   }
 
