@@ -12,7 +12,7 @@ import { VIEWS, CONTENT, animationTime, LeafElement } from '../tools/types';
 import RegForm from './ContentRegForm';
 import Rules from './Rules';
 
-export const API = 'https://dev.code-essence.eu/lidl/';
+export const API = 'https://dev.code-essence.eu/lehe/';
 export const CDN = API + 'media/';
 
 const App: React.FC = () => {

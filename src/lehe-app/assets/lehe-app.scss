@@ -1,4 +1,4 @@
-$assetPath : 'https://dev.code-essence.eu/lidl/media/';
+$assetPath : 'https://dev.code-essence.eu/lehe/media/';
 
 html, body {
   min-height: 100%;
@@ -50,7 +50,16 @@ html, body {
           border: solid 2px var(--error);
         }
         &:checked + span {
-          background-color: var(--blue);
+          position: relative;
+          &::before {
+            content: '✔';
+            line-height: .5;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+          }
         }
       }
     }
@@ -60,6 +69,46 @@ html, body {
     .form-submit {
       margin-top: var(--base-space);
     }
+  }
+
+  .icon {
+    position: relative;
+
+    &::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      top:0%;
+      right: 0%;
+      width: 40px;
+      height: 100%;
+      line-height: 36px;
+      text-align: center;
+      background: center center no-repeat;
+      font-size: 130%;
+    }
+    &__email {
+      &::after {
+        content: '@';
+        font-weight: bold;
+      }
+    }
+    &__arrow {
+      &::after {
+        background-image: url(icon_arrow.svg) ;
+        background-color: #fff;
+        background-size: 50%;
+        transform: scale(.8);
+      }
+    }
+    &__phone {
+      &::after {
+        background-image: url(icon_phone.svg) ;
+        background-size: 50%;
+        transform: scale(.8);
+      }
+    }
+
   }
 
   .app-container {
@@ -507,9 +556,40 @@ html, body {
       border-radius: 100%;
       opacity: 1;
 
+
       h2 {
         text-transform: uppercase;
         color: var(--green);
+        position: relative;
+        z-index: 2;
+      }
+
+      .circles {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-45deg);
+        animation: moonOrbit 30s linear infinite;
+
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          background-color:rgba($color: #fff, $alpha: .8);
+          border-radius: 100%;
+          width: 15%;
+          height: 15%;
+        }
+        &::before {
+          top: 0%;
+          transform: translate(-50%, -50%);
+        }
+        &::after {
+          bottom: 0%;
+          transform: translate(-50%, 50%);
+        }
       }
 
       &::before {
@@ -662,6 +742,11 @@ html, body {
 @keyframes prizeOrbit {
   from { transform: rotate(0deg) translateX(calc(var(--buble-size) * 0.85)) rotate(0deg); }
   to   { transform: rotate(360deg) translateX(calc(var(--buble-size) * 0.85)) rotate(-360deg); }
+}
+@keyframes moonOrbit {
+  from { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  to   { transform: rotate(360deg); }
 }
 @keyframes scaleOrbit {
   from { opacity: 0; transform: scale(0); }

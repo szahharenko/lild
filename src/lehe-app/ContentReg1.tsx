@@ -15,6 +15,7 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
       <button onClick={ () => buttonOnClick(true) }>Osalen!</button>
       <div className='bubble'>
         <div className='info-buble' onClick={ () => bubbleOnClick(true) }>
+          <div className='circles'></div>
           <h2>VAATA AUHINDA</h2>
         </div>
       </div>

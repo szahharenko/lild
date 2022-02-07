@@ -21,7 +21,7 @@ const Loading: React.FC<Props> = ({onLoadComplete}) => {
 
   const loaderRef = useRef<HTMLDivElement>(null);
   const preloadCheck = () => {
-    preLoaded === preloadData.length ? startApp() :  setTimeout(() => preloadCheck(), 2000);
+    preLoaded === preloadData.length ? startApp() :  setTimeout(() => preloadCheck(), 4000);
   }
   useEffect(() => {
     //lets preload everyhing first

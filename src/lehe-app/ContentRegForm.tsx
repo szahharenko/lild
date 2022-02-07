@@ -46,16 +46,16 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
       <p><strong>Liitudes uudiskirjaga<br/>osaled kinkekoti loosis.</strong></p>
       <p>Vali sobiv automaat ja sisesta enda e-post<br/>ja telefoni number. Nii saame võidu korral<br/>auhinna sulle saata.</p>
       <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))}>
-        <div>
+        <div className='icon icon__email'>
           <input type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} placeholder='E-post' />
         </div>
-        <div>
+        <div className='icon icon__arrow'>
           <select {...register('delivery')} className={`form-control ${errors.delivery ? 'is-invalid' : ''}`}>
             <option value=''>Pakiautomaat</option>
             { getOmnivaList().map( ([title, region, city], i) =>  <option key={i} value={title}>{`${city} - ${title}`}</option>) }
           </select>
         </div>
-        <div>
+        <div className='icon icon__phone'>
           <input type="tel" {...register('phoneNumber')} className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`} placeholder='Telefoni number' />
         </div>
         <label className='checkbox'>
