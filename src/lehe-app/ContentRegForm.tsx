@@ -3,20 +3,13 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { postData, getOmnivaList } from '../tools/tools'
+import { API } from './App';
+import { UserSubmitForm, UserFormResponse, RegisterErrors }  from '../models/models'
 
 interface Props {
   onSuccess: Function,
   toggleRules: Function
 }
-
-export type UserSubmitForm = {
-  email: string;
-  delivery: string;
-  phoneNumber: string;
-  acceptTerms: boolean;
-};
-
-const API_URL = 'https://httpbin.org/post';
 
 const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
 
@@ -34,10 +27,24 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
     resolver: yupResolver(validationSchema)
   });
 
+  const handleError = (resp: UserFormResponse) => {
+    if(resp.error === RegisterErrors.AlreadyExist) {
+      alert('Oled juba selle telefon ega e-post registreerunud');
+      return false;
+    }
+    alert('Midagi läks valesti :(')
+  }
+
   const handleFormSubmit = (data: UserSubmitForm) => {
-    postData(API_URL, data)
-      .then((resp) => onSuccess(resp))
-      .catch(() => alert('Midagi läks valesti :('))
+    postData(API, {...data, ...{action: 'register'}})
+      .then((resp: UserFormResponse) => {
+        if(resp.status === 1) {
+          onSuccess(data);
+        } else {
+          handleError(resp);
+        }
+      })
+      .catch(() => handleError({status:0}))
   }
 
   return (
@@ -45,7 +52,7 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
       <h1>Palju õnne!</h1>
       <p><strong>Liitudes uudiskirjaga<br/>osaled kinkekoti loosis.</strong></p>
       <p>Vali sobiv automaat ja sisesta enda e-post<br/>ja telefoni number. Nii saame võidu korral<br/>auhinna sulle saata.</p>
-      <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))}>
+      <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))} method="post">
         <div className='icon icon__email'>
           <input type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} placeholder='E-post' />
         </div>

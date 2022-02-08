@@ -11,12 +11,14 @@ import Backstage from './Backstage';
 import { VIEWS, CONTENT, animationTime, LeafElement } from '../tools/types';
 import RegForm from './ContentRegForm';
 import Rules from './Rules';
+import { UserSubmitForm }  from '../models/models'
 
 export const API = 'https://dev.code-essence.eu/lehe/';
 export const CDN = API + 'media/';
 
 const App: React.FC = () => {
 
+  const [currentUser, setUser] = useState('');
   const [currentView, setView] = useState<VIEWS>(VIEWS.LOADING);
   const [tryCount, setTryCount] = useState<VIEWS>(0);
   const [currentContent, setContent] = useState<CONTENT>(CONTENT.WELCOME_ANIMATION);
@@ -41,7 +43,8 @@ const App: React.FC = () => {
     setPlayingGame(true);
   }
 
-  const registerGame = () : void => {
+  const registerGame = (data: UserSubmitForm) : void => {
+    setUser(data.email);
     setContent(CONTENT.REGISTER_SUCCESS);
   }
 
@@ -78,7 +81,7 @@ const App: React.FC = () => {
                   { currentContent === CONTENT.ABOUT && <REG1 buttonOnClick={ () => setPlayingGame(true) } bubbleOnClick={ () => { setContent(CONTENT.BAG) }}></REG1> }
                   { currentContent === CONTENT.BAG && <REG2 buttonOnClick={returnToGame}></REG2> }
                   { currentContent === CONTENT.REGISTER && <RegForm toggleRules={toggleRules} onSuccess={registerGame}></RegForm> }
-                  { currentContent === CONTENT.REGISTER_SUCCESS && <RegSuccess></RegSuccess> }
+                  { currentContent === CONTENT.REGISTER_SUCCESS && <RegSuccess currentUser={currentUser}></RegSuccess> }
                   { currentContent === CONTENT.FAIL_RESULT && <GameFail buttonOnClick={tryAgain}></GameFail> }
                 </>
               }
