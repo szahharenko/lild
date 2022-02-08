@@ -16,10 +16,10 @@
 	$name	= mysqli_real_escape_string($conn, $data->delivery);
 	$terms	= mysqli_real_escape_string($conn, $data->acceptTerms);
 
-	$output = array('status'  => 0, 'message' => 'nothing happened', 'action' => $data->action);
+	$output = array('status'  => 0);
 
 	if(false) { //anti-spam?
-		$output = array('status'  => 0, 'message' => 'anti-spam');
+		$output = array('status'  => 0);
 		$conn->close();
 		die(json_encode($output));
 	}
@@ -29,23 +29,23 @@
 	$exist  = $existResult->num_rows != 0;
 
 	if($exist && $action == 'register') {
-		$output = array('status'  => 0, 'error' => 1, 'message' => 'register');
+		$output = array('status'  => 0, 'error' => 1);
 	}
 
 	if($exist && $action == 'like') {
 		$updateQuery  = "UPDATE $tableName SET likes=2 WHERE email='$email'";
 		$updateResult = $conn->query($updateQuery);
-		$output = array('status'  => $updateResult ? 1 : 0, 'message' => 'like');
+		$output = array('status'  => $updateResult ? 1 : 0);
 	}
 
 	if(!$exist && $action == 'like') {
-		$output = array('status'  => 0, 'message' => 'ai ai ai... like');
+		$output = array('status'  => 0);
 	}
 
 	if(!$exist && $action == 'register') {
 		$sql = "INSERT INTO $tableName (email, phone, post, likes) VALUES ('$email', '$phone', '$post', 1);";
 		$success = $conn->query($sql);
-		$output =array('status'  => $success ? 1 : 0, 'message' => 'register');
+		$output =array('status'  => $success ? 1 : 0);
 	}
 	$conn->close();
 
