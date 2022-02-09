@@ -8,15 +8,18 @@ interface Props {
 const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
   return (
     <div className='reg fade-stack'>
-      <h1>Värskus on<br/>kohe kohe siin!</h1>
+      <h1>Värskus on <br/>kohe-kohe siin!</h1>
       <p>Kui tunned, et sinu söögilaud vajab rohkem head ja värsket, oled õiges kohas.</p>
-      <p>Mine mängi mängu ja liitu uudiskirjaga, nii püsid ka edaspidiselt kursis kõige värskemate pakkumistega.</p>
-      <p>Uudiskirjaga liitunute vahel loosime välja XXX poekotti üllatustega.</p>
-      <button onClick={ () => buttonOnClick(true) }>Osalen!</button>
+      <p>Mängi mängu ja liitu uudiskirjaga, nii püsid ka edaspidi kursis kõige värskemate pakkumistega.</p>
+      <p>Uudiskirjaga liitunute vahel loosime välja 2500 poekotti koos kataloogi ja šokolaadiga. </p>
+      <button onClick={ () => buttonOnClick(true) }>OSALEN!</button>
       <div className='bubble'>
         <div className='info-buble' onClick={ () => bubbleOnClick(true) }>
           <div className='circles'></div>
-          <h2>VAATA AUHINDA</h2>
+          <div className='circle-inner'>
+            <h2>VAATA AUHINDA</h2>
+            <p>Mugav poekott koos kataloogi ja šokolaadiga.</p>
+          </div>
         </div>
       </div>
     </div>

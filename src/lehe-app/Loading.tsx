@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import { CDN } from './App';
+import { CDN } from '../models/models';
 import { getRandomFact } from '../tools/tools';
 let preLoaded = 0;
 
@@ -24,10 +24,10 @@ const Loading: React.FC<Props> = ({onLoadComplete}) => {
     preLoaded === preloadData.length ? startApp() :  setTimeout(() => preloadCheck(), 4000);
   }
   useEffect(() => {
-    //lets preload everyhing first
     preloadData.forEach((image) => {
       const img = new Image();
       img.onload = () => preLoaded++;
+      img.onerror = () => preLoaded++;
       img.src = CDN + image;
     });
     preloadCheck();

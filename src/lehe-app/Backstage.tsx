@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeafElement } from '../tools/types';
+import { LeafElement } from '../models/models';
 
 interface Props {
   onLeafClick: Function,

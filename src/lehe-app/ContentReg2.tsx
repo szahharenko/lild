@@ -1,5 +1,5 @@
 import React from 'react';
-import { CDN } from './App';
+import { CDN } from '../models/models';
 
 interface Props {
   buttonOnClick: Function

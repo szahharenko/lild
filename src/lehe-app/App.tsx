@@ -8,10 +8,9 @@ import PayingGame from './ContentPayingGame';
 import Loading from './Loading';
 import Welcome from './ContentWelcome';
 import Backstage from './Backstage';
-import { VIEWS, CONTENT, animationTime, LeafElement } from '../tools/types';
 import RegForm from './ContentRegForm';
 import Rules from './Rules';
-import { UserSubmitForm }  from '../models/models'
+import { UserSubmitForm, VIEWS, CONTENT, animationTime, LeafElement }  from '../models/models'
 
 export const API = 'https://dev.code-essence.eu/lehe/';
 export const CDN = API + 'media/';
@@ -53,13 +52,9 @@ const App: React.FC = () => {
     setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime * 3 );
   }
 
-  const toggleRules = () => {
-    setRules(!rulesOpen);
-  }
+  const toggleRules = () => setRules(!rulesOpen);
 
-  const returnToGame = () : void => {
-    setContent(CONTENT.ABOUT)
-  }
+  const returnToGame = () : void => setContent(CONTENT.ABOUT)
 
   return (
     <div className='main-app'>

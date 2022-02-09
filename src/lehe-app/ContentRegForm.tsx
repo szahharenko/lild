@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { postData, getOmnivaList } from '../tools/tools'
-import { API } from './App';
+import { API } from '../models/models';
 import { UserSubmitForm, UserFormResponse, RegisterErrors }  from '../models/models'
 
 interface Props {
@@ -50,8 +50,9 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
   return (
     <div className='result'>
       <h1>Palju õnne!</h1>
-      <p><strong>Liitudes uudiskirjaga<br/>osaled kinkekoti loosis.</strong></p>
-      <p>Vali sobiv automaat ja sisesta enda e-post<br/>ja telefoni number. Nii saame võidu korral<br/>auhinna sulle saata.</p>
+      <p>Sisesta oma andmed, et liituda uudiskirjaga ja osaleda kinkekoti loosis.</p>
+      <p>Vali sobiv automaat ja sisesta enda e-posti aadress ja telefoninumber.</p>
+      <p>Nii saame võidu korral sulle auhinna saata.</p>
       <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))} method="post">
         <div className='icon icon__email'>
           <input type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} placeholder='E-post' />
@@ -73,7 +74,7 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
           <span></span>
         </label>
         <div className='form-submit'>
-          <button>Osalen Loosimises</button>
+          <button>OSALEN LOOSIMISES</button>
         </div>
       </form>
     </div>
