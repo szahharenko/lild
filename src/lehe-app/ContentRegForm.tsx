@@ -50,8 +50,8 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
   return (
     <div className='result'>
       <h1>Palju õnne!</h1>
-      <p>Sisesta oma andmed, et liituda uudiskirjaga ja osaleda kinkekoti loosis.</p>
-      <p>Vali sobiv automaat ja sisesta enda e-posti aadress ja telefoninumber.</p>
+      <p>Sisesta oma andmed, et liituda uudiskirjaga<br/> ja osaleda kinkekoti loosis.</p>
+      <p>Vali sobiv automaat ja sisesta enda e-posti<br/> aadress ja telefoninumber.</p>
       <p>Nii saame võidu korral sulle auhinna saata.</p>
       <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))} method="post">
         <div className='icon icon__email'>
