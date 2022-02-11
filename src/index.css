@@ -1,17 +1,24 @@
 @font-face {
-  font-family: Lidl Font Pro;
-  src: url('lehe-app/assets/font/LidlFontPro-SemiBold.eot');
-  src: url('lehe-app/assets/font/LidlFontPro-SemiBold.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontPro-SemiBold.woff') format("woff");
-  font-weight: 700;
+  font-family: LidlCondPro;
+  src: url('lehe-app/assets/font/LidlFontCondPro-Book.eot');
+  src: url('lehe-app/assets/font/LidlFontCondPro-Book.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontCondPro-Book.woff') format("woff");
+  font-weight: 400;
   font-style: normal;
   font-display: swap
 }
-
 @font-face {
-  font-family: Lidl Font Pro;
-  src: url('lehe-app/assets/font/LidlFontPro-Regular.eot');
-  src: url('lehe-app/assets/font/LidlFontPro-Regular.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontPro-Regular.woff') format("woff");
-  font-weight: 400;
+  font-family: LidlCondPro;
+  src: url('lehe-app/assets/font/LidlFontCondPro-Semibold.eot');
+  src: url('lehe-app/assets/font/LidlFontCondPro-Semibold.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontCondPro-Semibold.woff') format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap
+}
+@font-face {
+  font-family: LidlCondPro;
+  src: url('lehe-app/assets/font/LidlFontCondPro-Bold.eot');
+  src: url('lehe-app/assets/font/LidlFontCondPro-Bold.eot?#iefix') format("embedded-opentype"), url('lehe-app/assets/font/LidlFontCondPro-Bold.woff') format("woff");
+  font-weight: 800;
   font-style: normal;
   font-display: swap
 }
@@ -34,7 +41,7 @@ html {
 }
 
 html, body, input, textarea, select, button {
-  font-family: Lidl Font Pro, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-family: LidlCondPro, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   font-weight: 400;
   font-size: var(--font-size);
   line-height: normal
@@ -85,6 +92,7 @@ button {
   background-color: var(--blue);
   color: var(--base-bg);
   box-sizing: content-box;
+  text-transform: uppercase;
 }
 button.button-secondary {
   background-color: var(--base-bg);
@@ -92,9 +100,18 @@ button.button-secondary {
   border: solid 2px var(--blue);
 }
 button.button-small {
-  height: calc( var(--input-height) / 1.2);
-  line-height: calc( var(--input-height) / 1.2);
-  padding: 0 calc(var(--base-space) / 2);
+  height: calc( var(--input-height) / 1.4);
+  line-height: calc( var(--input-height) / 1.4);
+  padding: 0 calc(var(--base-space) / 3);
+  font-size: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+  button.button-small {
+    height: calc( var(--input-height) / 2);
+    line-height: calc( var(--input-height) / 2);
+    font-size: 60%;
+  }
 }
 
 button[type=submit] {

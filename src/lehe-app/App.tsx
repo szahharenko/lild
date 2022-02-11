@@ -12,8 +12,6 @@ import RegForm from './ContentRegForm';
 import Rules from './Rules';
 import { UserSubmitForm, VIEWS, CONTENT, animationTime, LeafElement }  from '../models/models'
 
-export const API = 'https://dev.code-essence.eu/lehe/';
-export const CDN = API + 'media/';
 
 const App: React.FC = () => {
 
