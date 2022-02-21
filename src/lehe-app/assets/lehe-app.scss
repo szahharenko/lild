@@ -742,6 +742,9 @@ html, body {
   padding: calc( var(--base-space) * 2 );
 
   h1 {
+    font-size: calc( var(--font-size) * 2);
+  }
+  h2 {
     font-size: calc( var(--font-size) * 1.5);
   }
 
