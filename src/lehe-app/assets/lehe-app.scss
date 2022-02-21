@@ -701,7 +701,23 @@ html, body {
 }
 
 .prize {
-  img {display: block;max-height: 200px;margin: 0 auto;}
+  .prize-in-animation {
+    position: relative;
+    margin-bottom: 1em;
+    img {display: block;max-height: 200px;margin: 0 auto;opacity:0;}
+    img + img {
+      opacity: 1;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-height: 60vh;
+      height: 60vh;
+      transform-origin: top center;
+      animation: bagFallIn 2.5s ease-in-out forwards;
+    }
+  }
+
 }
 
 .rules-container {
@@ -862,6 +878,16 @@ html, body {
 @keyframes tree-wind-3 {
   50%   { transform: rotate(5deg) ; }
 }
+@keyframes bagFallIn {
+  0%  { transform: rotate(-30deg) translateX(-50%) translateY(-25%); }
+  10% { transform: rotate( 30deg) translateX(-50%) translateY(-20%); }
+  20% { transform: rotate(-20deg) translateX(-50%) translateY(-15%); }
+  30% { transform: rotate( 20deg) translateX(-50%) translateY(-10%); }
+  40% { transform: rotate(-10deg) translateX(-50%) translateY(-5%); }
+  50% { transform: rotate( 10deg) translateX(-50%) translateY(-0%); }
+  60% { transform: rotate( 0deg)  translateX(-50%) translateY(-0%); }
+}
+
 
 .leafs {
 
