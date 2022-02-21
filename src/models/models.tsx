@@ -32,6 +32,6 @@ export enum CONTENT {
     REGISTER_SUCCESS = 6
 }
 
-export type LeafElement = 0 | 1 | 2 | 3;
+export type LeafElement = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export const animationTime = 2000;

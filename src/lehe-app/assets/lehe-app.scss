@@ -338,7 +338,78 @@ html, body {
       }
     }
   }
-
+  .leaf4 {
+    top: -5%;
+    left: 50%;
+    transform-origin: top center;
+    transform: rotate(20deg);
+    &::before {
+      background: url(#{$assetPath}leaf-2-glow.png) top left no-repeat;
+      background-size: contain;
+      opacity: 0;
+    }
+    &::after {
+      background: url(#{$assetPath}leaf-2.png) top left no-repeat;
+      background-size: contain;
+    }
+    &__active {
+      top: 25%;
+      left: 50%;
+      transform: rotate(-20deg) scale(1.5);
+      &::before {
+        opacity: .9;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .leaf5 {
+    bottom: 10%;
+    right: 15%;
+    transform-origin: center center;
+    transform: rotate(100deg);
+    &::before {
+      background: url(#{$assetPath}leaf-2-glow.png) top left no-repeat;
+      background-size: contain;
+      opacity: 0;
+    }
+    &::after {
+      background: url(#{$assetPath}leaf-2.png) top left no-repeat;
+      background-size: contain;
+    }
+    &__active {
+      top: 25%;
+      left: 50%;
+      transform: rotate(-20deg) scale(1.5);
+      &::before {
+        opacity: .9;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .leaf6 {
+    bottom: -5%;
+    left: 33%;
+    transform-origin: center center;
+    transform: rotate(180deg);
+    &::before {
+      background: url(#{$assetPath}leaf-2-glow.png) top left no-repeat;
+      background-size: contain;
+      opacity: 0;
+    }
+    &::after {
+      background: url(#{$assetPath}leaf-2.png) top left no-repeat;
+      background-size: contain;
+    }
+    &__active {
+      top: 25%;
+      left: 50%;
+      transform: rotate(-20deg) scale(1.5);
+      &::before {
+        opacity: .9;
+        transform: scale(1.1);
+      }
+    }
+  }
   &__active {
     z-index: 4;
     pointer-events: all;
@@ -371,6 +442,20 @@ html, body {
     .leaf3 {
       top: calc(50vh - (720px/2));
       right: calc(50vw - (720px/2));
+    }
+    .leaf4 {
+      top: calc(50vh - (720px/1.5));
+      left: calc(50vw - 70px);
+    }
+    .leaf5 {
+      top: calc(50vh + (720px/6));
+      right: calc(50vw - (720px/2));
+      transform: rotate(145deg);
+    }
+    .leaf6 {
+      top: calc(50vh + (720px/3));
+      left: calc(50vw - (720px/6));
+      transform: rotate(210deg);
     }
   }
 }

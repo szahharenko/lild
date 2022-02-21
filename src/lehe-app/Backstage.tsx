@@ -30,6 +30,15 @@ const Backstage: React.FC<Props> = ({ onLeafClick, isPlayingGame, rulesToggle, r
       <span className="leaf3-wrapper">
         <span className={`leaf leaf3 ${currentLeaf === 3 ? 'leaf3__active' : ''}`} onClick={ () => onLeafClick(3) }></span>
       </span>
+      <span className="leaf4-wrapper">
+        <span className={`leaf leaf4 ${currentLeaf === 4 ? 'leaf4__active' : ''}`} onClick={ () => onLeafClick(1) }></span>
+      </span>
+      <span className="leaf5-wrapper">
+        <span className={`leaf leaf5 ${currentLeaf === 5 ? 'leaf5__active' : ''}`} onClick={ () => onLeafClick(2) }></span>
+      </span>
+      <span className="leaf6-wrapper">
+        <span className={`leaf leaf6 ${currentLeaf === 6 ? 'leaf6__active' : ''}`} onClick={ () => onLeafClick(3) }></span>
+      </span>
     </div>
     <button onClick={tgl} className='toggle-rules-button button-secondary button-small'>INFO JA REEGLID</button>
   </>
