@@ -1,4 +1,5 @@
 import React from 'react';
+import { CDN } from '../models/models';
 
 interface Props {
   buttonOnClick: Function,
@@ -18,7 +19,9 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
           <div className='circles'></div>
           <div className='circle-inner'>
             <h2>VAATA AUHINDA</h2>
-            <p>Mugav poekott koos kataloogi ja šokolaadiga.</p>
+            <div className='prize-preview'>
+              <img src={`${CDN}bag.png`} alt='Riidest poekott'/>
+            </div>
           </div>
         </div>
       </div>

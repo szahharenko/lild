@@ -649,6 +649,13 @@ html, body {
       border-radius: 100%;
       opacity: 1;
 
+      .prize-preview {
+        img {
+          max-height: 190px;
+          margin-top: -80px;
+        }
+      }
+
 
       h2 {
         text-transform: uppercase;
