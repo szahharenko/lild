@@ -9,7 +9,7 @@ const Welcome: React.FC<Props> = () => {
       <h1 className='letter-in'>
         { wrapLetters('Värskelt') }
         <br/>
-        { wrapLetters('saabumas') }
+        { wrapLetters('saabumas!') }
       </h1>
     </div>
   );
