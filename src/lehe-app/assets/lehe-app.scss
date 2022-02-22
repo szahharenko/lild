@@ -130,6 +130,9 @@ html, body {
   animation: appear .5s ease forwards;
   z-index: 1;
 
+  background: url(#{$assetPath}top-left-bg.png) top left no-repeat;
+  background-size: 60% auto;
+
   &::before {
     content: '';
     position: absolute;
@@ -173,7 +176,7 @@ html, body {
       right: 0;
       animation-delay: .3s;
 
-      &::before {
+      &::after {
         content: '';
         position: absolute;
         top:0;
@@ -733,13 +736,30 @@ html, body {
   top: 50%;
   left: 50%;
   width: 740px;
-  max-height: min(100vh, 740px);
-  overflow: auto;
   background-color: rgba($color: #000000, $alpha: .9);;
   color: #fff;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: calc( var(--base-space) * 2 );
+
+  ::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,.1);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255,255,255,.2);
+    }
+  }
+
+  .rules-overflow {
+    overflow: auto;
+    max-height: min(100vh, 740px);
+  }
 
   h1 {
     font-size: calc( var(--font-size) * 2);

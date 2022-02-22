@@ -1,8 +1,8 @@
 CREATE TABLE `lehe_mang` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `email` varchar(200) NOT NULL UNIQUE,
-  `phone` varchar(200) NOT NULL UNIQUE,
+  `email` varchar(200) NOT NULL,
+  `phone` varchar(200) NOT NULL,
   `post` varchar(200) NOT NULL,
   `likes` int(11) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp()
