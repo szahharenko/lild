@@ -3,7 +3,7 @@ import {FacebookShareButton } from "react-share";
 import { postData } from '../tools/tools'
 import { API } from '../models/models';
 
-const SHARE_URL = 'https://zealous-poincare-b2e6ee.netlify.app/';
+const SHARE_URL = 'https://xn--vrskus-bua.ee/';
 const SHARE_QUOTE = 'Värskelt saabumas! Midagi suurt on kohe-kohe tulekul! Seniks tule mängi ja osale auhinnaloosis! Loosimisel on 2500 poekotti koos värskuse kataloogi ja šokolaadiga. Võitmiseks vali õige leht ja liitu uudiskirjaga – nii osaledki poekoti loosis.';
 
 interface Props {

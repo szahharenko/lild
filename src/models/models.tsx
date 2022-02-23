@@ -1,4 +1,4 @@
-export const API = 'https://dev.code-essence.eu/lehe/';
+export const API = 'https://xn--vrskus-bua.ee/api/';
 export const CDN = API + 'media/';
 
 export type UserSubmitForm = {
