@@ -1,5 +1,5 @@
 import {omnivaList} from './data/omniva';
-import {factList} from './data/facts';
+import {factList, loadingFactList} from './data/facts';
 import { OmnivaLocation } from './data/omniva';
 
 export const wrapLetters = (word: string) => word.split('').map( (l,i) => <span key={i}>{l}</span>);
@@ -23,4 +23,9 @@ export function getOmnivaList() {
 export const getRandomFact = () : string => {
     const randomIndex = Math.floor( Math.random() * factList.length );
     return factList[randomIndex];
+}
+
+export const getLoadingFact = () : string => {
+    const randomIndex = Math.floor( Math.random() * loadingFactList.length );
+    return loadingFactList[randomIndex];
 }
