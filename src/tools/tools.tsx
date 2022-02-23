@@ -1,5 +1,6 @@
 import {omnivaList} from './data/omniva';
 import {factList} from './data/facts';
+import { OmnivaLocation } from './data/omniva';
 
 export const wrapLetters = (word: string) => word.split('').map( (l,i) => <span key={i}>{l}</span>);
 
@@ -11,8 +12,11 @@ export async function postData(url = '', data = {}) {
     return await response.json();
 }
 
+let sortedOmniva : OmnivaLocation[] = [];
 export function getOmnivaList() {
-    var sortedOmniva = omnivaList.sort( ([nameA, regionA, cityA],[nameB, regionB, cityB]) => cityA > cityB ? 1 : -1);
+    if(sortedOmniva.length === 0) {
+        sortedOmniva = omnivaList.sort( ([nameA, regionA, cityA],[nameB, regionB, cityB]) => cityA > cityB ? 1 : -1);
+    }
     return sortedOmniva;
 }
 
