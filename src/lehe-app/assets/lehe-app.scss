@@ -602,12 +602,20 @@ html, body {
         line-height: calc(var(--font-size) * 4);
       }
     }
+    .result {
+      button {
+        margin-top: 0.75em;
+      }
+    }
     .reg {
 
       padding: 0 0.8rem;
 
       p {
         margin: var(--base-space/2) 0 0;
+      }
+      button {
+        margin-top: 0.75em;
       }
     }
 
