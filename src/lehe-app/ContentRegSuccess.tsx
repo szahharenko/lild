@@ -4,7 +4,7 @@ import { postData } from '../tools/tools'
 import { API } from '../models/models';
 
 const SHARE_URL = 'https://xn--vrskus-bua.ee/';
-const SHARE_QUOTE = 'Värskelt saabumas! Midagi suurt on kohe-kohe tulekul! Seniks tule mängi ja osale auhinnaloosis! Loosimisel on 2500 poekotti koos värskuse kataloogi ja šokolaadiga. Võitmiseks vali õige leht ja liitu uudiskirjaga – nii osaledki poekoti loosis.';
+const SHARE_QUOTE = 'Midagi suurt on kohe-kohe tulekul! Seniks tule mängi ja osale auhinnaloosis! Loosime välja 2500 taaskasutatavat poekotti koos värskuse kataloogi ja šokolaadiga.';
 
 interface Props {
   currentUser: string
