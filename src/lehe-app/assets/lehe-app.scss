@@ -767,7 +767,8 @@ html, body {
 
   .rules-overflow {
     overflow: auto;
-    max-height: min(100vh, 740px);
+    max-height: min(60vh, 740px);
+    margin: 0 -1em 0 0;
   }
 
   h1 {
