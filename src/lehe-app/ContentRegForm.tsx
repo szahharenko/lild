@@ -74,7 +74,7 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
           </select>
         </div>
         <div className='icon icon__phone'>
-          <input type="tel" {...register('phoneNumber')} className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`} placeholder='Telefoni number' />
+          <input type="tel" {...register('phoneNumber')} className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`} placeholder='Telefoninumber' />
         </div>
         <label className='checkbox'>
           <span>
