@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { postData, getOmnivaList } from '../tools/tools'
+import { postData, getOmnivaList  } from '../tools/tools'
 import { API } from '../models/models';
 import { UserSubmitForm, UserFormResponse, RegisterErrors }  from '../models/models'
+import { OmnivaLocation } from '../tools/data/omniva';
 
 interface Props {
   onSuccess: Function,
@@ -12,6 +13,8 @@ interface Props {
 }
 
 const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
+
+
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().required('Email is required').email('Email is invalid'),
@@ -47,6 +50,13 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
       .catch(() => handleError({status:0}))
   }
 
+  let omnivaList : OmnivaLocation[] = [];
+
+  const getLocationList = ( ) => {
+    if(omnivaList.length === 0) omnivaList = getOmnivaList();
+    return omnivaList;
+  }
+
   return (
     <div className='result'>
       <h1>Palju õnne!</h1>
@@ -60,7 +70,7 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
         <div className='icon icon__arrow'>
           <select {...register('delivery')} className={`form-control ${errors.delivery ? 'is-invalid' : ''}`}>
             <option value=''>Pakiautomaat</option>
-            { getOmnivaList().map( ([title, region, city], i) =>  <option key={i} value={title}>{`${city} - ${title}`}</option>) }
+            { getLocationList().map( ([title, region, city], i) =>  <option key={i} value={title}>{`${city} - ${title}`}</option>) }
           </select>
         </div>
         <div className='icon icon__phone'>
