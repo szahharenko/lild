@@ -31,7 +31,7 @@ const Rules: React.FC<Props> = ({ rulesToggle }) => {
         <p>Kampaanias osaleja kinnitab Korraldajale enda kohta esitatud andmete õigsust, vastavust Korraldaja kehtestatud reeglitele, soovi osaleda kampaanias ja nõustumist kõigi Korraldaja kehtestatud kampaaniatingimustega. Alaealise osaleja puhul loetakse osalemine kinnitatuks, kui osalejal on olemas seadusliku esindaja või eestkostja nõusolek kampaanias osalemiseks ning see isik kinnitab kampaania reeglitega tutvumist ja nendega nõustumist.</p>
 
         <h2>VÕITJAD</h2>
-        <p>Võitja nimi avalikustatakse kampaanialehel ja hiljem Korraldaja sotsiaalmeediakanalites. Võitjaga võetakse ühendust sisestatud kontaktandmete kaudu ning auhind tarnitakse osaleja poolt välja valitud pakiautomaati.</p>
+        <p>Võitjaga võetakse ühendust sisestatud kontaktandmete kaudu ning auhind tarnitakse osaleja poolt välja valitud pakiautomaati.</p>
 
         <h2>ISIKUANDMETE KAITSE</h2>
         <p>Kampaanias osaleja annab Korraldajale nõusoleku kampaania läbiviimise eesmärgil kasutada ja edastada Imagine AD OÜ-le töötlemiseks oma isikuandmeid, sh uudiskirjade saatmiseks, kampaania võitja nime avaldamiseks kampaanialehel ja hiljem sotsiaalmeediakanalites, samuti oma isikuandmete säilitamiseks kuue kuu jooksul pärast kampaania lõppu võimalike vaidluste lahendamiseks.</p>
