@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { postData, getOmnivaList  } from '../tools/tools'
-import { API } from '../models/models';
+import { API, isRevealed } from '../models/models';
 import { UserSubmitForm, UserFormResponse, RegisterErrors }  from '../models/models'
 import { OmnivaLocation } from '../tools/data/omniva';
 
@@ -60,9 +60,19 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
   return (
     <div className='result'>
       <h1>Palju õnne!</h1>
-      <p><strong>Sisesta oma andmed, et liituda uudiskirjaga<br/> ja osaleda kinkekoti loosis.</strong></p>
-      <p>Vali sobiv pakiautomaat ja sisesta enda e-posti<br/> aadress ja telefoninumber.</p>
-      <p>Nii saame võidu korral sulle auhinna saata.</p>
+      { isRevealed ?
+        <>
+          <p><strong>Sisesta oma andmed, et liituda Lidli uudiskirjaga ja osaleda kinkekoti loosis.</strong></p>
+          <p>Vali sobiv pakiautomaat ja sisesta enda e-posti aadress ja telefoninumber.</p>
+          <p>Nii saame võidu korral sulle auhinna saata.</p>
+        </>
+        :
+        <>
+          <p><strong>Sisesta oma andmed, et liituda uudiskirjaga<br/> ja osaleda kinkekoti loosis.</strong></p>
+          <p>Vali sobiv pakiautomaat ja sisesta enda e-posti<br/> aadress ja telefoninumber.</p>
+          <p>Nii saame võidu korral sulle auhinna saata.</p>
+        </>
+      }
       <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))} method="post">
         <div className='icon icon__email'>
           <input type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} placeholder='E-post' />

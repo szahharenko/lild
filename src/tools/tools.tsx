@@ -1,8 +1,9 @@
 import {omnivaList} from './data/omniva';
-import {factList, loadingFactList} from './data/facts';
+import {factList, factListRevealed, loadingFactList, loadingFactListRevealed} from './data/facts';
 import { OmnivaLocation } from './data/omniva';
+import { isRevealed } from '../models/models';
 
-export const wrapLetters = (word: string) => word.split('').map( (l,i) => <span key={i}>{l}</span>);
+export const wrapLetters = (word: string) => word.split('').map( (l,i) => <span key={i}>{ l === '' ? '&nbsp;' : l}</span>);
 
 export async function postData(url = '', data = {}) {
     const response = await fetch(url, {
@@ -21,11 +22,13 @@ export function getOmnivaList() {
 }
 
 export const getRandomFact = () : string => {
-    const randomIndex = Math.floor( Math.random() * factList.length );
-    return factList[randomIndex];
+    const facts = isRevealed ? factListRevealed : factList;
+    const randomIndex = Math.floor( Math.random() * facts.length );
+    return facts[randomIndex];
 }
 
 export const getLoadingFact = () : string => {
-    const randomIndex = Math.floor( Math.random() * loadingFactList.length );
-    return loadingFactList[randomIndex];
+    const facts = isRevealed ? loadingFactListRevealed : loadingFactList;
+    const randomIndex = Math.floor( Math.random() * facts.length );
+    return facts[randomIndex];
 }

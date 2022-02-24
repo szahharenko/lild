@@ -28,3 +28,48 @@ export const loadingFactList : string[] = [
     'Kõige parem vahend seente värskena hoidmiseks on paberkott. Hoia seeni külmkapis paberkoti sees – nii saad värskeid maitseid kauem nautida.'
 
 ]
+
+export const factListRevealed : string[] = [
+    'Lidli kauplused on kompaktsed ja kaubavalik optimeeritud, et saaksid osta kõik nädalaks vajaliku kiirelt – ja hoida kulusid kokku. ',
+    'Kõik Lidli kauplused Eestis kasutavad 100% taastuvenergiast toodetud elektrit.',
+    'Lidl on esimene jaemüüja Eestis, kelle kauplustele on antud EDGE sertifikaat, mis näitab, et poehooned on ehitatud keskkonnasõbralikult.',
+    'Lidlil on oma istandused, kus kasvatatakse näiteks puuvilju ja muud. Nii saame sinuni tuua kõige värskemad ja paremad toiduained.',
+    'Lidlil on oma jäätisevabrik! Tänu sellele saame veenduda, et head jäätist jagub kõigile.',
+    'Lidli piimatooted kannavad nime Pilos ja magusasõpradele on mõeldud Milbona piimatooted: jogurtid, kohukesed ja muu hea.',
+    'Lidlis on suur valik imemaitsvat juustu. Gurmaanidel soovitame kindlasti proovida Lovilo Itaalia juustusid, Chêne d\'Argent\'i Prantsuse juustusid ja Valley Spire\'i Cheddarit.',
+    'Lidlis pole ostukorve, vaid erinevas mõõdus ostukärud igale külastajale. Vali endale sobiva suurusega käru, siis ei pea sa kandma rasket korvi ja poeskäik on meeldivam.',
+    'Lidli kaupluste juures leidub parkimiskohti igale vajadusele. Näiteks terve perega poodlema tulles saad parkida laiemale peremärgisega parkimiskohale.',
+    'Kõik Lidli saia- ja pagaritooted on küpsetatud kohapeal, et saaksid otse ahjust tulnud hõrgutistest vaid kõige värskemaid maitseelamusi.',
+    'Nendeks hetkedeks, kui ei jätku aega kokkamise jaoks, aitavad Chef Select imehead ja lihtsad valmistoidud.',
+    'Kui otsid kiiret ja tervislikku vahepala enda kiiresse päeva, siis parima valiku pähklisegusid leiad Alesto toodete seast.',
+    'Lidli poodidest leiad ka valiku gluteeni- ja laktoosivabu tooteid. Nii saad nautida enda toitu muretult.',
+    'Kui otsid tõelist kohvielamust, leiad parima valiku Bellarom toodete seast.',
+    'Lidlis ära lase pead norgu – meie poodides on hinnasildid toote kohal, mitte all, nii et hoia pea püsti!',
+    'Kas teadsid, et Lidl on üle maailma loonud enam kui 341 000 töökohta? See on kolmveerand Tallinna elanikkonnast!',
+    'Lidl avab Eestis korraga tervelt 8 poodi. See on siiski alla 0.1% kõikidest maailma Lidli poodidest – kokku on poode üle 11 550!',
+    'Lidlis on müügil ka palju muud peale toidu. Meilt leiad kõik, mida oma majapidamises vajad, alates hügieenitarvetest ja lõpetades aiatööriistadega – iga nädal on uus hea valik!',
+    'Lupilu tootesarjast leiad kõik vajaliku enda beebi jaoks, alustades toidust ja lõpetades hooldusvahenditega.',
+    'Lidli jaoks on kõige olulisem pakkuda sulle parimat kvaliteeti madalaima võimaliku hinnaga.',
+    'Lidlist leiad igal nädalal kaks Kasulikku Kolmikut – esmaspäevast kolmapäevani ja neljapäevast pühapäevani on kolm populaarset toidukaupa eriti hea hinnaga.',
+    'Lidli abiga saad tuua mitmekesisust oma söögilauale: me korraldame teemanädalaid, mille vältel saad osta kindla riigi rahvusköögi tooteid – loomulikult väga hea hinnaga.',
+    'Kestlikkus ja vastutustundlikkus on Lidlile väga olulised. Meie riiulitelt leiad mitmeid EL-i mahetoote logoga märgistatud kaupu.',
+    'Kas oled suur kalasõber? Lidlist leiad laia valiku värsket ja külmutatud kala ja palju muid mereande. Sarja Ocean Sea tooted on eriti kalasõbralikud – neil on MSC sertifikaat, mis tagab, et kalapüügil on loodust kahjustatud minimaalselt.'
+]
+export const loadingFactListRevealed : string[] = [
+    'Lidli kauplused on kompaktsed ja kaubavalik optimeeritud, et saaksid osta kõik nädalaks vajaliku kiirelt – ja hoida kulusid kokku. ',
+    'Kõik Lidli kauplused Eestis kasutavad 100% taastuvenergiast toodetud elektrit.',
+    'Lidl on esimene jaemüüja Eestis, kelle kauplustele on antud EDGE sertifikaat, mis näitab, et poehooned on ehitatud keskkonnasõbralikult.',
+    'Lidlil on oma istandused, kus kasvatatakse näiteks puuvilju ja muud. Nii saame sinuni tuua kõige värskemad ja paremad toiduained.',
+    'Lidlil on oma jäätisevabrik! Tänu sellele saame veenduda, et head jäätist jagub kõigile.',
+    'Lidli piimatooted kannavad nime Pilos ja magusasõpradele on mõeldud Milbona piimatooted: jogurtid, kohukesed ja muu hea.',
+    'Kõik Lidli saia- ja pagaritooted on küpsetatud kohapeal, et saaksid otse ahjust tulnud hõrgutistest vaid kõige värskemaid maitseelamusi.',
+    'Nendeks hetkedeks, kui ei jätku aega kokkamise jaoks, aitavad Chef Select imehead ja lihtsad valmistoidud.',
+    'Kui otsid kiiret ja tervislikku vahepala enda kiiresse päeva, siis parima valiku pähklisegusid leiad Alesto toodete seast.',
+    'Lidli poodidest leiad ka valiku gluteeni- ja laktoosivabu tooteid. Nii saad nautida enda toitu muretult.',
+    'Kui otsid tõelist kohvielamust, leiad parima valiku Bellarom toodete seast.',
+    'Lidlis ära lase pead norgu – meie poodides on hinnasildid toote kohal, mitte all, nii et hoia pea püsti!',
+    'Kas teadsid, et Lidl on üle maailma loonud enam kui 341 000 töökohta? See on kolmveerand Tallinna elanikkonnast!',
+    'Lupilu tootesarjast leiad kõik vajaliku enda beebi jaoks, alustades toidust ja lõpetades hooldusvahenditega.',
+    'Lidli jaoks on kõige olulisem pakkuda sulle parimat kvaliteeti madalaima võimaliku hinnaga.',
+    'Kestlikkus ja vastutustundlikkus on Lidlile väga olulised. Meie riiulitelt leiad mitmeid EL-i mahetoote logoga märgistatud kaupu.'
+]
