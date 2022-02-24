@@ -3,7 +3,7 @@ import {FacebookShareButton } from "react-share";
 import { postData } from '../tools/tools'
 import { API } from '../models/models';
 
-const SHARE_URL = window.location.href;
+const SHARE_URL = 'https://varskeltsaabumas.ee/';
 const SHARE_QUOTE = 'Midagi suurt on kohe-kohe tulekul! Seniks tule mängi ja osale auhinnaloosis! Loosime välja 2500 taaskasutatavat poekotti koos värskuse kataloogi ja šokolaadiga.';
 
 interface Props {
