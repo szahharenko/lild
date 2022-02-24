@@ -29,12 +29,11 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
         <div className='info-buble' onClick={ () => bubbleOnClick(true) }>
           <div className='circles'></div>
           <div className='circle-inner'>
-            <p>
               { isRevealed ?
-                'Mugav Lidli poekott koos värskuse kataloogi ja šokolaadiga.' :
-                'Mugav poekott koos värskuse kataloogi ja šokolaadiga.'
+                <p>Mugav Lidli poekott <br/>koos värskuse kataloogi<br/> ja šokolaadiga</p>
+                :
+                <p>Mugav poekott koos värskuse kataloogi ja šokolaadiga.</p>
               }
-            </p>
             <div className='prize-preview'>
               <img src={`${CDN}bag.png`} alt='Riidest poekott'/>
             </div>
