@@ -35,7 +35,7 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
                 <p>Mugav poekott koos värskuse kataloogi ja šokolaadiga.</p>
               }
             <div className='prize-preview'>
-              <img src={`${CDN}bag.png`} alt='Riidest poekott'/>
+              <img src={`${CDN}bag${isRevealed ? '-reveal' : ''}.png`} alt='Riidest poekott'/>
             </div>
           </div>
         </div>

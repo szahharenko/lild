@@ -586,6 +586,7 @@ html, body {
           animation: letterIn .4s linear forwards;
           opacity: 0;
           transform: rotate(107deg) scale(.2) translateX(570%) translateY(150%);
+          min-width: 20px;
           @for $i from 1 through 30 {
             $delay: calc($i / 15 + 1);
             &:nth-child(#{$i}) {

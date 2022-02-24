@@ -11,7 +11,8 @@ const preloadData = [
   'leaf-2.png',
   'leaf-3.png',
   'leaf-1.png',
-  'bag.png'
+  'bag.png',
+  'bg-reveal.png'
 ];
 
 interface Props {

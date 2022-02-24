@@ -62,8 +62,8 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
       <h1>Palju õnne!</h1>
       { isRevealed ?
         <>
-          <p><strong>Sisesta oma andmed, et liituda Lidli uudiskirjaga ja osaleda kinkekoti loosis.</strong></p>
-          <p>Vali sobiv pakiautomaat ja sisesta enda e-posti aadress ja telefoninumber.</p>
+          <p><strong>Sisesta oma andmed, et liituda<br/>Lidli uudiskirjaga ja osaleda<br/> kinkekoti loosis.</strong></p>
+          <p>Vali sobiv pakiautomaat ja sisesta enda<br/> e-posti aadress ja telefoninumber.</p>
           <p>Nii saame võidu korral sulle auhinna saata.</p>
         </>
         :
