@@ -32,3 +32,10 @@ export const getLoadingFact = () : string => {
     const randomIndex = Math.floor( Math.random() * facts.length );
     return facts[randomIndex];
 }
+
+declare global {
+    interface Window {
+      gtag: Function;
+    }
+  }
+export const GA = window.gtag || function() { };

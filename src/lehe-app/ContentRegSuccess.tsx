@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {FacebookShareButton } from "react-share";
 import { postData } from '../tools/tools'
 import { API, isRevealed} from '../models/models';
+import { GA } from '../tools/tools';
 
 const SHARE_URL = 'https://varskeltsaabumas.ee/';
 const SHARE_QUOTE =
@@ -20,6 +21,7 @@ const RegSuccess: React.FC<Props> = ({currentUser}) => {
   const addExtraLike = () => {
     setShared(true)
     postData(API, {action: 'like', email: currentUser});
+    GA('event', 'shared', {'revealed': isRevealed ? 'Yes' : 'No'});
   }
 
   return (

@@ -1,7 +1,7 @@
 export const API = 'https://xn--vrskus-bua.ee/api/';
 export const CDN = API + 'media/';
 
-const revealDate = '2022-02-21 18:00';
+const revealDate = '2022-02-27 18:00';
 
 export const isRevealed = new Date() >= new Date(revealDate);
 

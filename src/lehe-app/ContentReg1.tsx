@@ -1,5 +1,6 @@
 import React from 'react';
 import { CDN, isRevealed } from '../models/models';
+import { GA } from '../tools/tools';
 
 interface Props {
   buttonOnClick: Function,
@@ -7,6 +8,11 @@ interface Props {
 }
 
 const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
+
+  const buttonAction = () => {
+    GA('event', 'play_game', {'p': isRevealed ? 'Yes' : 'No'});
+    buttonOnClick(true)
+  }
   return (
     <div className='reg fade-stack'>
       { isRevealed ?
@@ -24,16 +30,12 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
           <p>Uudiskirjaga liitunute vahel loosime välja 2500 poekotti koos värskuse kataloogi ja šokolaadiga.</p>
         </>
       }
-      <button onClick={ () => buttonOnClick(true) }>MÄNGI MÄNGU</button>
+      <button onClick={ buttonAction }>MÄNGI MÄNGU</button>
       <div className='bubble'>
         <div className='info-buble' onClick={ () => bubbleOnClick(true) }>
           <div className='circles'></div>
           <div className='circle-inner'>
-              { isRevealed ?
-                <h2>VAATA AUHINDA</h2>
-                :
-                <p>Mugav poekott koos värskuse kataloogi ja šokolaadiga.</p>
-              }
+              <h2>VAATA AUHINDA</h2>
             <div className='prize-preview'>
               <img src={`${CDN}bag${isRevealed ? '-reveal' : ''}.png`} alt='Riidest poekott'/>
             </div>
