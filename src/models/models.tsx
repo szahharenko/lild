@@ -1,8 +1,9 @@
 export const API = 'https://xn--vrskus-bua.ee/api/';
 export const CDN = API + 'media/';
 
-const revealDate = '2022-02-23';
-export const isRevealed = (new Date()).setHours(0,0,0,0) >= new Date(revealDate).setHours(0,0,0,0);
+const revealDate = '2022-02-27 18:00';
+
+export const isRevealed = new Date() >= new Date(revealDate);
 
 export type UserSubmitForm = {
     action: 'register';
