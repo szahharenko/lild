@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { postData, getOmnivaList  } from '../tools/tools'
+import { postData, getOmnivaList, GA } from '../tools/tools';
 import { API, isRevealed } from '../models/models';
 import { UserSubmitForm, UserFormResponse, RegisterErrors }  from '../models/models'
 import { OmnivaLocation } from '../tools/data/omniva';
@@ -39,15 +39,22 @@ const RegForm: React.FC<Props> = ({ onSuccess, toggleRules }) => {
   }
 
   const handleFormSubmit = (data: UserSubmitForm) => {
+    GA('event', 'register_start');
     postData(API, {...data, ...{action: 'register'}})
       .then((resp: UserFormResponse) => {
         if(resp.status === 1) {
+          GA('event', 'register_success');
           onSuccess(data);
         } else {
+          GA('event', 'register_failed');
           handleError(resp);
+
         }
       })
-      .catch(() => handleError({status:0}))
+      .catch(() => {
+        handleError({status:0});
+        GA('event', 'register_failed');
+      })
   }
 
   let omnivaList : OmnivaLocation[] = [];
