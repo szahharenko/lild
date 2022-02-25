@@ -121,6 +121,17 @@ html, body {
   }
 }
 
+.logo {
+  position: absolute;
+  z-index: 10;
+  top: 3vh;
+  left: 3vh;
+  svg {
+    min-width: 5vw;
+    height: auto;
+  }
+}
+
 .backstage {
   position: absolute;
   top: 0;
@@ -129,7 +140,6 @@ html, body {
   height: 100%;
   animation: appear .5s ease forwards;
   z-index: 1;
-
   background: url(#{$assetPath}top-left-bg.png) top left no-repeat;
   background-size: 60% auto;
 
@@ -243,6 +253,8 @@ html, body {
   background-color: rgba($color: #000000, $alpha: 0);
   transition: all .3s;
   pointer-events: none;
+
+
 
   .leaf {
     position: fixed;

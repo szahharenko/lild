@@ -19,8 +19,8 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
         :
         <>
           <h1>Värskus on <br/>kohe-kohe siin!</h1>
-          <p>Kui tunned, et sinu söögilaud vajab rohkem head ja värsket, oled õiges kohas. Uuel nädalal kuulutame välja, mis täpselt tulemas on – igatahes midagi suurt!</p>
-          <p>Praegu mine mängi mängu ja liitu uudiskirjaga, et püsida kursis kõige värskemate pakkumistega.</p>
+          <p>Midagi suurt on tulemas – uuel nädalal kuulutame välja, mis see täpselt on.</p>
+          <p>Praegu mine mängi mängu ja liitu uudiskirjaga, et sinu söögilauale jõuaks rohkem head ja värsket.</p>
           <p>Uudiskirjaga liitunute vahel loosime välja 2500 poekotti koos värskuse kataloogi ja šokolaadiga.</p>
         </>
       }
