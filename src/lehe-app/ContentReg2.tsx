@@ -13,7 +13,7 @@ const REG2: React.FC<Props> = ({ buttonOnClick }) => {
         <img src={`${CDN}bag${isRevealed ? '-reveal' : ''}.png`} alt='Riidest poekott'/>
       </div>
       <h1>AUHIND</h1>
-      <p>Riidest poekott,<br/>millega saab mugavalt poes käia.</p>
+      <p>Mugav Lidli poekott koos<br/> värskuse kataloogi ja šokolaadiga.</p>
       <button onClick={ () => buttonOnClick(true) }>Tagasi</button>
     </div>
   );

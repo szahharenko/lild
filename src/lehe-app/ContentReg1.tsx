@@ -30,7 +30,7 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
           <div className='circles'></div>
           <div className='circle-inner'>
               { isRevealed ?
-                <p>Mugav Lidli poekott <br/>koos värskuse kataloogi<br/> ja šokolaadiga</p>
+                <h2>VAATA AUHINDA</h2>
                 :
                 <p>Mugav poekott koos värskuse kataloogi ja šokolaadiga.</p>
               }

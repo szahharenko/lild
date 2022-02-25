@@ -671,7 +671,11 @@ html, body {
         }
       }
 
-
+      h2 {
+        position: relative;
+        z-index: 2;
+        color: var(--green);
+      }
       p {
         position: relative;
         z-index: 2;
