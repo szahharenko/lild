@@ -24,7 +24,7 @@ const REG1: React.FC<Props> = ({ buttonOnClick, bubbleOnClick }) => {
           <p>Uudiskirjaga liitunute vahel loosime välja 2500 poekotti koos värskuse kataloogi ja šokolaadiga.</p>
         </>
       }
-      <button onClick={ () => buttonOnClick(true) }>OSALEN!</button>
+      <button onClick={ () => buttonOnClick(true) }>MÄNGI MÄNGU</button>
       <div className='bubble'>
         <div className='info-buble' onClick={ () => bubbleOnClick(true) }>
           <div className='circles'></div>

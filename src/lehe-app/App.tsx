@@ -27,9 +27,9 @@ const App: React.FC = () => {
   const gamePlay = (leafNumber: LeafElement) : void => {
     setLeaf(leafNumber);
     switch(tryCount) {
-      case 0: setContent(CONTENT.FAIL_RESULT); break;
-      case 1: setContent(Math.random() < 0.5 ? CONTENT.FAIL_RESULT : CONTENT.REGISTER); break;
-      case 2: setContent(CONTENT.REGISTER); break;
+      //case 0: setContent(CONTENT.FAIL_RESULT); break;
+      case 0: setContent(Math.random() < 0.5 ? CONTENT.FAIL_RESULT : CONTENT.REGISTER); break;
+      case 1: setContent(CONTENT.REGISTER); break;
     }
     setTryCount(tryCount+1);
     setPlayingGame(false);
@@ -47,7 +47,7 @@ const App: React.FC = () => {
 
   const startApp = () : void => {
     setTimeout( () => { setView(VIEWS.READY) }, animationTime );
-    setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime * 3 );
+    setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime );
   }
 
   const toggleRules = () => setRules(!rulesOpen);
