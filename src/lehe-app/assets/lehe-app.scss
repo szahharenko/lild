@@ -475,31 +475,6 @@ html, body {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .leafs {
-    &__active {
-      .leaf {
-        transform-origin: center center;
-      }
-      .leaf1 {
-        top: 15%;
-        left: 6%;
-        transform: rotate(-15deg) scale(2);
-      }
-      .leaf2 {
-        bottom: 10%;
-        left: 5%;
-        transform: rotate(-15deg) scale(1.8);
-      }
-      .leaf3 {
-        top: 20%;
-        right: 0%;
-        transform: rotate(0deg) scale(1.5);
-      }
-    }
-  }
-}
-
 .loader {
   position: fixed;
   top: 50%;
@@ -984,13 +959,53 @@ html, body {
     animation-delay: .5s;
   }
   &__active {
-    .leaf3-wrapper,
-    .leaf2-wrapper,
-    .leaf1-wrapper {
-      width: 50%;
-      height: 50%;
-      min-width: 50%;
+    width: 0%;
+    height: 0%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .leafs {
+    &__active {
+      .leaf1-wrapper,
+      .leaf2-wrapper,
+      .leaf3-wrapper {
+        position: static;
+      }
+      .leaf {
+        transform-origin: center center;
+      }
+      .leaf1 {
+        top: 20vh;
+        left: 6vw;
+        transform: rotate(-15deg) scale(2);
+      }
+      .leaf2 {
+        bottom: 24vh;
+        left: 5vw;
+        transform: rotate(-15deg) scale(1.8);
+      }
+      .leaf3 {
+        top: 25vh;
+        right: 0;
+        transform: rotate(0deg) scale(1.5);
+      }
+      .leaf4 {
+        top: 17vh;
+        left: 42vw;
+        transform: rotate(20deg) scale(1.5);
+      }
+      .leaf5 {
+        bottom: 10vh;
+        right: 15vw;
+        transform: rotate(160deg) scale(1.5);
+      }
+      .leaf6 {
+        bottom: 18vh;
+        left: 33vw;
+        top: auto;
+        transform: rotate(210deg) scale(1.5);
+      }
     }
   }
-
 }
