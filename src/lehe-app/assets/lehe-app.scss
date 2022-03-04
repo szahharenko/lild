@@ -1010,3 +1010,16 @@ html, body {
     }
   }
 }
+
+.social-icons {
+  line-height: 30px;
+  a {
+    display: inline-block;
+    padding: 15px;
+    vertical-align: middle;
+    svg, img {
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+  }
+}

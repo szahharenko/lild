@@ -10,7 +10,8 @@ import Welcome from './ContentWelcome';
 import Backstage from './Backstage';
 import RegForm from './ContentRegForm';
 import Rules from './Rules';
-import { UserSubmitForm, VIEWS, CONTENT, animationTime, LeafElement, isRevealed }  from '../models/models'
+import SubscibeForm from './ContentSubscibe';
+import { UserSubmitForm, VIEWS, CONTENT, animationTime, LeafElement, isRevealed, isOver }  from '../models/models'
 
 
 const App: React.FC = () => {
@@ -68,7 +69,9 @@ const App: React.FC = () => {
         { currentView === VIEWS.READY &&
           <div className='content'>
             <div ref={viewRef} className='bounce-in'>
-              { isPlayingGame ? <PayingGame></PayingGame> :
+              {
+                isOver ? <SubscibeForm toggleRules={toggleRules}></SubscibeForm> :
+                isPlayingGame ? <PayingGame></PayingGame> :
                 <>
                   { currentContent === CONTENT.WELCOME_ANIMATION && <Welcome></Welcome> }
                   { currentContent === CONTENT.ABOUT && <REG1 buttonOnClick={ () => setPlayingGame(true) } bubbleOnClick={ () => { setContent(CONTENT.BAG) }}></REG1> }
