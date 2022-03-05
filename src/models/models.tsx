@@ -5,8 +5,6 @@ export const CDN = API + 'media/';
 //new Date() >= new Date(revealDate);
 
 export const isRevealed = true;
-export const isOver = true;
-
 export type UserSubmitForm = {
     action: 'register';
     email: string;

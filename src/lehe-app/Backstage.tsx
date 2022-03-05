@@ -1,15 +1,16 @@
 import React from 'react';
-import { LeafElement, isOver } from '../models/models';
+import { LeafElement } from '../models/models';
 
 interface Props {
   onLeafClick: Function,
   rulesToggle: Function,
   isPlayingGame: boolean,
   rulesOpen: boolean,
-  currentLeaf: LeafElement
+  currentLeaf: LeafElement,
+  isOver: boolean | undefined
 }
 
-const Backstage: React.FC<Props> = ({ onLeafClick, isPlayingGame, rulesToggle, rulesOpen, currentLeaf }) => {
+const Backstage: React.FC<Props> = ({ onLeafClick, isPlayingGame, rulesToggle, rulesOpen, currentLeaf, isOver }) => {
   const tgl = () => {
     rulesToggle(!rulesOpen);
   }

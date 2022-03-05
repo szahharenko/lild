@@ -10,9 +10,15 @@ import Welcome from './ContentWelcome';
 import Backstage from './Backstage';
 import RegForm from './ContentRegForm';
 import Rules from './Rules';
-import SubscibeForm from './ContentSubscibe';
-import { UserSubmitForm, VIEWS, CONTENT, animationTime, LeafElement, isRevealed, isOver }  from '../models/models'
+import SubscribeForm from './ContentSubscribe';
+import { UserSubmitForm, VIEWS, CONTENT, animationTime, LeafElement, isRevealed, API } from '../models/models';
+import { postData } from '../tools/tools';
 
+interface IsOverResponse {
+  status: number,
+  isOver: boolean,
+  diff: number
+}
 
 const App: React.FC = () => {
 
@@ -24,6 +30,7 @@ const App: React.FC = () => {
   const [isPlayingGame, setPlayingGame] = useState<boolean>(false);
   const [rulesOpen, setRules] = useState<boolean>(false);
   const viewRef = useRef<HTMLDivElement>(null);
+  const [isOver, setIsOver] = useState<boolean | undefined>(undefined);
 
   const gamePlay = (leafNumber: LeafElement) : void => {
     setLeaf(leafNumber);
@@ -47,8 +54,11 @@ const App: React.FC = () => {
   }
 
   const startApp = () : void => {
-    setTimeout( () => { setView(VIEWS.READY) }, animationTime );
-    setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime );
+    postData(`${API}time/`).then( (resp: IsOverResponse) => {
+      setIsOver(resp.isOver);
+      setTimeout( () => { setView(VIEWS.READY) }, animationTime );
+      setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime );
+    }).finally()
   }
 
   const toggleRules = () => setRules(!rulesOpen);
@@ -63,6 +73,7 @@ const App: React.FC = () => {
             currentLeaf={currentLeaf}
             isPlayingGame={isPlayingGame}
             rulesOpen={rulesOpen}
+            isOver={isOver}
             rulesToggle={toggleRules}>
           </Backstage> }
         { currentView === VIEWS.LOADING && <Loading onLoadComplete={startApp}></Loading> }
@@ -70,7 +81,7 @@ const App: React.FC = () => {
           <div className='content'>
             <div ref={viewRef} className='bounce-in'>
               {
-                isOver ? <SubscibeForm toggleRules={toggleRules}></SubscibeForm> :
+                isOver ? <SubscribeForm toggleRules={toggleRules}></SubscribeForm> :
                 isPlayingGame ? <PayingGame></PayingGame> :
                 <>
                   { currentContent === CONTENT.WELCOME_ANIMATION && <Welcome></Welcome> }
@@ -85,7 +96,7 @@ const App: React.FC = () => {
           </div>
         }
       </div>
-      { rulesOpen && <Rules rulesToggle={toggleRules}></Rules> }
+      { rulesOpen && <Rules rulesToggle={toggleRules} isOver={isOver}></Rules> }
       { isRevealed && <div className='logo'><img src="https://varskeltsaabumas.ee/img/lidl-logo.svg" alt="Lidl logo"/></div>
     }
     </div>
