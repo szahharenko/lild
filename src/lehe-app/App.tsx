@@ -55,7 +55,8 @@ const App: React.FC = () => {
 
   const startApp = () : void => {
     postData(`${API}time/`).then( (resp: IsOverResponse) => {
-      setIsOver(resp.isOver);
+      console.log(resp.isOver);
+      setIsOver(false); //resp.isOver
       setTimeout( () => { setView(VIEWS.READY) }, animationTime );
       setTimeout( () => { setContent(CONTENT.ABOUT) }, animationTime );
     }).finally()

@@ -52,7 +52,7 @@ const SubscribeForm: React.FC<Props> = ({ toggleRules }) => {
         </>
         :
         <>
-          <h1>LIITU LIDL UDISKIRJAGA!</h1>
+          <h1>LIITU LIDLI<br/> UUDISKIRJAGA!</h1>
           <p>Värskuse kampaania on selleks korraks lõppenud<br/> ja auhinnad on võitjate poole teel.</p>
           <p>Siiski tasub ka praegu liituda Lidli uudiskirjaga.</p>
           <p>Sisesta oma e-posti aadress, et saada värskeid ideid<br/> ja inspiratsiooni kokkamiseks ja kodu korrashoiuks!</p>
@@ -69,7 +69,7 @@ const SubscribeForm: React.FC<Props> = ({ toggleRules }) => {
               <span></span>
             </label>
             <div className='form-submit'>
-              <button>LIITUN UDISKIRJAGA</button>
+              <button>LIITUN UUDISKIRJAGA</button>
             </div>
           </form>
         </>
